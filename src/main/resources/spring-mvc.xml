@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+	<context:component-scan base-package="com.ssh" use-default-filters="false">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+		<context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
+	</context:component-scan>
+	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/pages/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+	
+	<!-- 
+	访问没有映射的资源或静态资源(如：js)，需要配置该项，使用容器默认的servlet处理请求
+	**需同时配置<mvc:annotation-driven/> 否则controller将失效
+	 -->
+	<mvc:default-servlet-handler/>
+	
+	<!-- 需配置在包含controller的容器中 -->
+	<mvc:annotation-driven></mvc:annotation-driven>
+	
+	<!-- 
+		关于<mvc:default-servlet-handler/>和<mvc:annotation-driven></mvc:annotation-driven>的说明：
+		在spring IOC容器 和 springMVC IOC容器分开配置的情况下：
+		实验证明：
+		1.要么都不配置，要么都配置
+		2.<mvc:default-servlet-handler/>配置在任意一个容器都行，而<mvc:annotation-driven/>只能配置在扫描了controller的容器中
+		3.若均配置在SpringMVC容器中，无配置顺序要求
+		4.区分<tx:annotation-driven/> 和 <mvc:annotation-driven/>，不要弄混 
+	 -->
+	
+</beans>

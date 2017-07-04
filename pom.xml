@@ -1,0 +1,149 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.ys</groupId>
+  <artifactId>ssh</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+  <properties>
+  	<spring.version>4.2.3.RELEASE</spring.version>
+  	<hibernate.version>4.3.11.Final</hibernate.version>
+  	<mysqlDriver.version>5.1.40</mysqlDriver.version>
+  	<servlet-api.version>2.5</servlet-api.version>
+  	<jstl.version>1.1.2</jstl.version>
+  </properties>
+  
+  <dependencies>
+  	<!-- 
+  	1.spring 包
+  	 -->
+  	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-core</artifactId>
+	    <version>${spring.version}</version>
+	</dependency>
+	
+	<dependency>
+	   <groupId>org.springframework</groupId>
+	   <artifactId>spring-context</artifactId>
+	   <version>${spring.version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-web</artifactId>
+	    <version>${spring.version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-webmvc</artifactId>
+	    <version>${spring.version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-tx</artifactId>
+	    <version>${spring.version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-aspects</artifactId>
+	    <version>${spring.version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-jdbc</artifactId>
+	    <version>${spring.version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-instrument</artifactId>
+	    <version>${spring.version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-jms</artifactId>
+	    <version>${spring.version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-orm</artifactId>
+	    <version>${spring.version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-oxm</artifactId>
+	    <version>${spring.version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-test</artifactId>
+	    <version>${spring.version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-websocket</artifactId>
+	    <version>${spring.version}</version>
+	</dependency>
+	
+	<!-- 
+	2.hibernate包
+	 -->
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-core</artifactId>
+	    <version>${hibernate.version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-c3p0</artifactId>
+	    <version>${hibernate.version}</version>
+	</dependency>
+	
+	<!-- 
+	3.mysql驱动
+	 -->
+	<dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	    <version>${mysqlDriver.version}</version>
+	</dependency>
+	
+	<!-- 
+	4.servlet-api
+	 -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>servlet-api</artifactId>
+	    <version>${servlet-api.version}</version>
+	    <scope>provided</scope>
+	</dependency>
+	
+	<!-- 
+	5.jstl 
+	 -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>jstl</artifactId>
+	    <version>${jstl.version}</version>
+	</dependency>
+	<!-- jstl的实现，必须同时加入 -->
+	<dependency>
+	    <groupId>taglibs</groupId>
+	    <artifactId>standard</artifactId>
+	    <version>${jstl.version}</version>
+	</dependency>
+  	
+  </dependencies>
+  
+</project>
